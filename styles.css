@@ -33,7 +33,7 @@ body {
     box-shadow: 0 10px 40px #111116;
 }
 
-.body p, .body h3 {
+.body p, .body h3, .body h6{
     opacity: 0.5;
     transform: translateY(10px);
     animation: fadeInUp 1s ease-out forwards;
@@ -235,7 +235,15 @@ body {
     opacity: 1;
 }
 
-.body p, .body h3 {
+.text-sans p {
+    text-align: center;
+    color: #E4FFFF;
+    font-size: 5px;
+    margin: 20px 20%;
+    line-height: 1.5;
+}
+
+.body p, .body h3, .body h6{
     text-align: center;
     color: #E4FFFF;
     font-size: 22px;
@@ -243,10 +251,15 @@ body {
     line-height: 1.5;
 }
 
+.body .sansimg {
+    width: 10%;
+    height: auto;
+} 
+
 .body img {
     display: block;
     margin: 0 auto;
-    width: 60%;
+    width: 40%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
