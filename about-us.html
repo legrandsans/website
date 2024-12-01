@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sans</title>
+  <link rel="shortcut icon" href="images/sans.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <div class="header-left">
+      <img src="images/Sans.png" alt="Sans">
+      <h1>sans.</h1>
+    </div>
+    <div class="header-right">
+      <div class="sans">
+        <p><strong>Sans</strong></p>
+        <div class="dropdown-menu">
+          <a href="index.html">Welcome</a>
+          <a href="links.html">Links</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="hexagone">
+        <p>Hexagon</p>
+        <div class="hexagone-menu">
+            <a href="alone.html">Alone.</a>
+        </div> 
+      </div>
+    </div>
+  </div>
+  
+  <div class="body">
+    <h3>About us</h3>
+    <p>We are a french developper team, for now, there is only one developper, <strong>sans</strong> <br><br>We are the creator of <strong>Alone.</strong> a horror game on Roblox.</p>
+    <br>
+    <h3>sans.</h3> <h6>Main developper & Owner</h6>
+    <p class="text-sans"><em>"Hey, it's me."</em></p>
+    <img src="/images/sans.png" alt="Sans" class="sansimg">
+    <div class="button-container">
+      <a href="https://www.youtube.com/@saans." class="youtube-button" target="_blank">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+      <a href="https://x.com/sans58375278603" class="twitter-button" target="_blank">
+        <i class="fab fa-twitter"></i> Twitter
+      </a>
+      <a href="https://www.instagram.com/legrandsans_" class="instagram-button" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://discord.com/users/legrandsans" class="discord-button" target="_blank">
+        <i class="fab fa-discord"></i> Discord
+      </a>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("mousemove", (e) => {
+        const body = document.body;
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        body.style.backgroundPosition = `${x * 50}% ${y * 50}%`;
+    });
+    </script>
+    
+</body>
+</html>
