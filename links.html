@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sans</title>
+  <link rel="shortcut icon" href="/images/hexagone.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <div class="header-left">
+      <img src="/images/Sans.png" alt="Sans">
+      <h1>sans.</h1>
+    </div>
+    <div class="header-right">
+      <div class="sans">
+        <p><strong>Sans</strong></p>
+        <div class="dropdown-menu">
+            <a href="index.html">Welcome</a>
+            <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="hexagone">
+        <p>Hexagon</p>
+        <div class="hexagone-menu">
+            <a href="#">Our games</a>
+            <a href="#">About us</a>
+        </div> 
+      </div>
+    </div>
+  </div>
+  
+  <div class="body">
+    <h3>Links</h3>
+    <div class="button-container">
+      <a href="https://www.youtube.com/yourchannel" class="youtube-button" target="_blank">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+      <a href="https://twitter.com/yourusername" class="twitter-button" target="_blank">
+        <i class="fab fa-twitter"></i> Twitter
+      </a>
+      <a href="https://www.instagram.com/yourusername" class="instagram-button" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://discord.com/users/legrandsans" class="discord-button" target="_blank">
+        <i class="fab fa-discord"></i> Discord
+      </a>
+      <a href="https://open.spotify.com/user/yourusername" class="spotify-button" target="_blank">
+        <i class="fab fa-spotify"></i> Spotify
+      </a>
+      <a href="https://www.tiktok.com/@yourusername" class="tiktok-button" target="_blank">
+        <i class="fab fa-tiktok"></i> TikTok
+      </a>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("mousemove", (e) => {
+        const body = document.body;
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        body.style.backgroundPosition = `${x * 50}% ${y * 50}%`;
+    });
+    </script>
+    
+</body>
+</html>
