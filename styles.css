@@ -53,10 +53,21 @@ body {
     margin-top: 30px;
     flex-wrap: wrap;
     text-align: center;
+    
 }
 
 .email-link {
     color: #47d4ff;
+}
+
+.issue1 {
+    background-image: url('images/issue.png');
+    box-shadow: 0 0px 30px #111116;
+    border-radius: 15px;
+    text-align: center;
+    margin: 20px 20%;
+    line-height: -0;
+    padding: 15px 15px;
 }
 
 .youtube-button, .twitter-button, .tiktok-button, .instagram-button, .discord-button, .spotify-button {
@@ -177,6 +188,8 @@ body {
     letter-spacing: 1px;
 }
 
+
+
 .header-right {
     display: flex;
     justify-content: flex-end;
@@ -270,7 +283,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30vh; /* Ajustez la hauteur selon vos besoins */
+    height: 30vh;
     text-align: center;
 }
 
