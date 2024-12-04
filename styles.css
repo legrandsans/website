@@ -1,0 +1,313 @@
+body {
+    margin: 0;
+    margin-top: 117px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #E4FFFF;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-size: 20px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('images/background-header.png');
+    background-size: cover;
+    background-position: center;
+    padding: 15px 30px;
+    box-shadow: 0 0px 30px #111116;
+    z-index: 1;
+    border-bottom: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.header:hover {
+    box-shadow: 0 10px 40px #111116;
+}
+
+.body p, .body h3, .body h6{
+    opacity: 0.5;
+    transform: translateY(10px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.email-link {
+    color: #47d4ff;
+}
+
+.youtube-button, .twitter-button, .tiktok-button, .instagram-button, .discord-button, .spotify-button {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 15px 35px;
+    border-radius: 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    width: 100%;
+}
+
+.tiktok-button {
+    background-color: #000000;
+}
+
+.tiktok-button:hover {
+    background-color: #1c1c1c;
+    transform: scale(1.05);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.tiktok-button:active {
+    background-color: #1a1a1a;
+}
+
+.youtube-button {
+    background-color: #FF0000;
+}
+
+.youtube-button:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.youtube-button:active {
+    background-color: #cc0000;
+}
+
+.twitter-button {
+    background-color: #1DA1F2;
+}
+
+.twitter-button:hover {
+    background-color: #0d95e8;
+    transform: scale(1.05);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.twitter-button:active {
+    background-color: #1A91DA;
+}
+
+.instagram-button {
+    background-color: #E4405F;
+}
+
+.instagram-button:hover {
+    background-color: #d73553;
+    transform: scale(1.05);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.instagram-button:active {
+    background-color: #c13584;
+}
+
+.discord-button {
+    background-color: #7289DA;
+}
+
+.discord-button:hover {
+    background-color: #5b6e94;
+    transform: scale(1.05);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.discord-button:active {
+    background-color: #4e5d77;
+}
+
+.spotify-button {
+    background-color: #1DB954;
+}
+
+.spotify-button:hover {
+    background-color: #1ed760;
+    transform: scale(1.05);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.spotify-button:active {
+    background-color: #1aa34a;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left img {
+    height: 50px;
+    margin-right: 15px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    font-size: 15px;
+}
+
+.hexagone, .sans {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hexagone:hover, .sans:hover {
+    transform: scale(1.02);
+}
+
+.hexagone-menu,
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -80px;
+    background-color: #111116;
+    color: #E4FFFF;
+    border: 1.5px solid #444;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 10;
+    width: 250px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hexagone-menu a,
+.dropdown-menu a {
+    color: #E4FFFF;
+    text-decoration: none;
+    display: block;
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hexagone-menu a:hover,
+.dropdown-menu a:hover {
+    background-color: #333;
+    transform: translateX(1px);
+}
+
+.hexagone:hover .hexagone-menu,
+.sans:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+}
+
+.text-sans p {
+    text-align: center;
+    color: #E4FFFF;
+    font-size: 5px;
+    margin: 20px 20%;
+    line-height: 1.5;
+}
+
+.body p, .body h3, .body h6{
+    text-align: center;
+    color: #E4FFFF;
+    font-size: 22px;
+    margin: 20px 20%;
+    line-height: 1.5;
+}
+
+.body .sansimg {
+    width: 10%;
+    height: auto;
+} 
+
+.body img .normal-image {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.body .update-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh; /* Ajustez la hauteur selon vos besoins */
+    text-align: center;
+}
+
+.body img.update {
+    margin: 0;
+    width: 20%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+    .body img {
+        width: 90%;
+    }
+
+    .header {
+        padding: 10px 20px;
+    }
+
+    .body p {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hexagone-menu,
+    .dropdown-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 70px);
+        overflow-y: auto;
+    }
+}

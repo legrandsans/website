@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sans</title>
+  <link rel="shortcut icon" href="images/sans.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <div class="header-left">
+      <img src="images/Sans.png" alt="Sans">
+      <h1>sans.</h1>
+    </div>
+    <div class="header-right">
+      <p><em>(Updated at 3:52 PM UTC+1) Under construction. Please wait.</em></p>
+      </div>
+    </div>
+  </div>
+  <div class="body">
+    <h3>Uh uhh..</h3>
+    <p>The website is updating / under maintenance for some moments.<br><br>Come back later!</p>
+    <div class="update-container"><img class:"update" src="images/update.gif" alt="Undertale"></div>
+  </div>
+  <script>
+    document.addEventListener("mousemove", (e) => {
+        const body = document.body;
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        body.style.backgroundPosition = `${x * 50}% ${y * 50}%`;
+    });
+    </script>
+    
+</body>
+</html>
