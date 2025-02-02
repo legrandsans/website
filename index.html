@@ -152,7 +152,7 @@
                     button.textContent = randomMessage;
                 }
 
-        const audio = new Audio("/click.wav");
+        const audio = new Audio("click.wav");
         audio.playbackRate = 1.5 + Math.random() * 0.5;
         audio.play();
 
@@ -175,7 +175,7 @@
                 button.textContent = "wow, 100 clicks!";
             } else if (count === 125) {
                 video = document.createElement("video");
-                video.src = "/subway-surfers.mp4";
+                video.src = "subway-surfers.mp4";
                 video.controls = false;
                 video.autoplay = true;
                 video.muted = false;
@@ -246,7 +246,7 @@
             } else if (count === 480) {
                 button.textContent = "heh";
                 video = document.createElement("video");
-                video.src = "/rickroll.mp4";
+                video.src = "rickroll.mp4";
                 video.controls = false;
                 video.autoplay = true;
                 video.muted = false;
@@ -294,7 +294,7 @@
                        button.click();
                    }, 300);
                    clickImage = document.createElement("img");
-                   clickImage.src = "/click.png";
+                   clickImage.src = "click.png";
                    clickImage.style.position = "absolute";
                    clickImage.style.width = "50px";
                    clickImage.style.height = "50px";
