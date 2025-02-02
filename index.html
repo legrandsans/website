@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Ubuntu, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background: #161b22;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #58a6ff;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            color: white;
+            background: #00C000;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+            box-shadow: 0px 6px 0px #00A800;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .btn:active {
+            transform: translateY(6px);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>heya !</h1>
+        <p>im workin' on this website, u just have to wait. but if you're feeling impatient, u can play this clicker game.</p>
+        <p id="click-count">Clicks: 0</p>
+        <button class="btn" id="click-button">click.</button>
+    </div>
+
+    <script>
+        let count = 0;
+        const button = document.getElementById("click-button");
+        const counterText = document.getElementById("click-count");
+
+        function getRandomColor() {
+            let color = Math.floor(Math.random() * 16777215).toString(16);
+            return `#${color.padStart(6, '0')}`;
+        }
+
+        function darkenColor(hex, percent) {
+            let num = parseInt(hex.slice(1), 16);
+            let r = Math.floor((num >> 16) * percent);
+            let g = Math.floor(((num >> 8) & 0x00FF) * percent);
+            let b = Math.floor((num & 0x0000FF) * percent);
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        const messages = [
+                    "keep going!",
+                    "you're amazing!",
+                    "almost there!",
+                    "you're unstoppable!",
+                    "incredible!",
+                    "you're a legend!",
+                    "keep it up!",
+                    "you're a hero!",
+                    "unbelievable!",
+                    "you're a click master!",
+                    "fantastic!",
+                    "awesome!",
+                    "you're the best!",
+                    "keep clicking!",
+                    "you're a superstar!",
+                    "you're on fire!",
+                    "amazing job!",
+                    "you're a champion!",
+                    "you're a winner!",
+                    "you're a pro!",
+                    "you're fantastic!",
+                    "keep clicking!",
+                    "you're a superstar!",
+                    "you're on fire!",
+                    "amazing job!",
+                    "you're a champion!",
+                    "you're a winner!",
+                    "you're a pro!",
+                    "keep it up!",
+                    "you're a hero!",
+                    "unbelievable!",
+                    "you're a click master!",
+                    "fantastic!",
+                    "awesome!",
+                    "you're the best!",
+                    "keep going!",
+                    "you're unstoppable!",
+                    "amazing!",
+                    "you're incredible!",
+                    "you're a legend!",
+                    "you're a superstar!",
+                    "you're on fire!",
+                    "amazing job!",
+                    "you're a champion!",
+                    "you're a winner!",
+                    "you're a pro!"
+                   ];
+       
+        function updateButton() {
+            count++;
+            counterText.textContent = `Clicks: ${count}`;
+            let randomColor = getRandomColor();
+            let darkerColor = darkenColor(randomColor, 0.8);
+            button.style.background = randomColor;
+            button.style.boxShadow = `0px 6px 0px ${darkerColor}`;
+
+            if (count % 10 === 0) {
+                    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                    button.textContent = randomMessage;
+                }
+
+        const audio = new Audio("click.wav");
+        audio.playbackRate = 1.5 + Math.random() * 0.5;
+        audio.play();
+
+
+        
+
+            if (count === 10) {
+                button.textContent = "ehh";
+            } else if (count === 20) {
+                button.textContent = "you're really doing this?";
+            } else if (count === 30) {
+                button.textContent = "i hope for you that you're having fun";
+            } else if (count === 40) {
+                button.textContent = "i'm not even sure if this is fun";
+            } else if (count === 50) {
+                button.textContent = "i'm just a button";
+            } else if (count === 70) {
+                button.textContent = "i'm just a button that you're clicking on for no reason";
+            } else if (count === 100) {
+                button.textContent = "wow, 100 clicks!";
+            } else if (count === 125) {
+                video = document.createElement("video");
+                video.src = "subway-surfers.mp4";
+                video.controls = false;
+                video.autoplay = true;
+                video.muted = false;
+                video.loop = true;
+                video.playbackRate = 3;
+                video.volume = 0.1;
+                video.style.position = "absolute";
+                video.style.top = "0px";
+                video.style.right = "0px";
+                video.style.width = "200px";
+                video.style.height = "auto";
+                document.body.appendChild(video);
+            } else if (count === 200) {
+                button.textContent = "200 clicks... now we put a cps counter";
+                const cpsCounter = document.createElement("p");
+                cpsCounter.innerHTML = "<strong>CPS: 0</strong>";
+                cpsCounter.style.color = "white";
+                cpsCounter.style.fontSize = "18px";
+                cpsCounter.style.marginTop = "20px";
+                document.querySelector(".container").appendChild(cpsCounter);
+                let cps = 0;
+                let lastCount = count;
+                setInterval(() => {
+                    cps = count - lastCount;
+                    lastCount = count;
+                    cpsCounter.innerHTML = `<strong>CPS: ${cps}</strong>`;
+                }, 1000);
+            } else if (count === 340) {
+                button.textContent = "haha got ya!";
+            const annoyingPopup = document.createElement("div");
+            annoyingPopup.style.position = "fixed";
+            annoyingPopup.style.top = "50%";
+            annoyingPopup.style.left = "50%";
+            annoyingPopup.style.transform = "translate(-50%, -50%)";
+            annoyingPopup.style.width = "300px";
+            annoyingPopup.style.height = "400px";
+            annoyingPopup.style.backgroundColor = "#161b22";
+            annoyingPopup.style.color = "white";
+            annoyingPopup.style.borderRadius = "10px";
+            annoyingPopup.style.boxShadow = "0px 8px 14px rgba(0, 0, 0, 0.5)";
+            annoyingPopup.style.zIndex = "1000";
+            annoyingPopup.style.display = "flex";
+            annoyingPopup.style.flexDirection = "column";
+            annoyingPopup.style.alignItems = "center";
+            annoyingPopup.style.justifyContent = "center";
+            annoyingPopup.innerHTML = `
+                <h2 style="margin-bottom: 20px;">virus.exe</h2>
+                <img src="https://c.tenor.com/9MVlipGuNioAAAAC/tenor.gif" alt="Funny Virus" style="width: 250px; height: auto; margin-bottom: 20px;">
+                <button id="close-popup" style="
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    color: white;
+                    background: #00C000;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 8px;
+                    font-weight: bold;
+                    box-shadow: 0px 6px 0px #00A800;
+                    transition: all 0.2s ease-in-out;
+                ">CLOSE</button>
+            `;
+            document.body.appendChild(annoyingPopup);
+
+            document.getElementById("close-popup").addEventListener("click", () => {
+                if (document.body.contains(annoyingPopup)) {
+                    document.body.removeChild(annoyingPopup);
+                }});
+            } else if (count === 480) {
+                button.textContent = "heh";
+                video = document.createElement("video");
+                video.src = "rickroll.mp4";
+                video.controls = false;
+                video.autoplay = true;
+                video.muted = false;
+                video.loop = true;
+                video.playbackRate = 2.5;
+                video.volume = 0.3;
+                video.style.position = "absolute";
+                video.style.bottom = "0px";
+                video.style.left = "0px";
+                video.style.width = "500px";
+                video.style.height = "auto";
+                document.body.appendChild(video);
+            } else if (count === 520) {
+                button.textContent = "i created an autoclicker for ya";
+                const autoclicker = document.createElement("button");
+                autoclicker.textContent = "Autoclicker: OFF";
+                autoclicker.style.padding = "12px 25px";
+                autoclicker.style.fontSize = "18px";
+                autoclicker.style.color = "white";
+                autoclicker.style.background = "#00C000";
+                autoclicker.style.border = "none";
+                autoclicker.style.cursor = "pointer";
+                autoclicker.style.borderRadius = "8px";
+                autoclicker.style.fontWeight = "bold";
+                autoclicker.style.boxShadow = "0px 6px 0px #00A800";
+                autoclicker.style.transition = "all 0.2s ease-in-out";
+                autoclicker.style.marginTop = "20px";
+                document.querySelector(".container").appendChild(autoclicker);
+                let autoclickerInterval = null;
+                let imageInterval = null;
+                let clickImage = null;
+
+                autoclicker.addEventListener("click", () => {
+                 if (autoclickerInterval) {
+                     clearInterval(autoclickerInterval);
+                     clearInterval(imageInterval);
+                     autoclickerInterval = null;
+                     autoclicker.textContent = "Autoclicker: OFF";
+                     if (clickImage) {
+                         document.body.removeChild(clickImage);
+                         clickImage = null;
+                     }
+                  } else {
+                   autoclickerInterval = setInterval(() => {
+                       button.click();
+                   }, 300);
+                   clickImage = document.createElement("img");
+                   clickImage.src = "click.png";
+                   clickImage.style.position = "absolute";
+                   clickImage.style.width = "50px";
+                   clickImage.style.height = "50px";
+                   document.body.appendChild(clickImage);
+
+        function moveImageRandomly() {
+            const randomX = Math.floor(Math.random() * (window.innerWidth - clickImage.offsetWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - clickImage.offsetHeight));
+            clickImage.style.left = `${randomX}px`;
+            clickImage.style.top = `${randomY}px`;
+        }
+
+        imageInterval = setInterval(moveImageRandomly, 300);
+        autoclicker.textContent = "Autoclicker: ON";
+    }
+});
+            } else if (count === 620) {
+                button.textContent = "i was bored of this background";
+                document.body.style.backgroundColor = getRandomColor();
+            } else if (count === 640) {
+                button.textContent = "this one too";
+                setInterval(() => {
+                    document.body.style.backgroundColor = getRandomColor();
+                    document.body.style.transition = "background-color 1s ease";
+                }, 1000);
+            } else if (count === 780) {
+                button.textContent = messages[Math.floor(Math.random() * messages.length)];
+                const confetti = document.createElement("div");
+                confetti.style.position = "fixed";
+                confetti.style.top = "0";
+                confetti.style.left = "0";
+                confetti.style.width = "100%";
+                confetti.style.height = "100%";
+                confetti.style.pointerEvents = "none";
+                confetti.style.zIndex = "1000";
+                confetti.innerHTML = `
+                    <div style="position: absolute; width: 100%; height: 100%; overflow: hidden;">
+                        <div style="position: absolute; width: 10px; height: 10px; background: red; animation: fall 2s infinite;"></div>
+                        <div style="position: absolute; width: 10px; height: 10px; background: blue; animation: fall 2s infinite;"></div>
+                        <div style="position: absolute; width: 10px; height: 10px; background: green; animation: fall 2s infinite;"></div>
+                        <div style="position: absolute; width: 10px; height: 10px; background: yellow; animation: fall 2s infinite;"></div>
+                    </div>
+                `;
+                document.body.appendChild(confetti);
+                setTimeout(() => {
+                    document.body.removeChild(confetti);
+                }, 5000);
+            } else if (count === 880) {
+                button.textContent = "i love bitcoin";
+                const bitcoinChart = document.createElement("iframe");
+                bitcoinChart.src = "https://www.tradingview.com/widgetembed/?frameElementId=tradingview_0b4e1&symbol=BITSTAMP%3ABTCUSD&interval=D&hidesidetoolbar=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=[]&theme=Dark&style=1&timezone=Etc%2FUTC&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en&utm_source=bitcoin.org&utm_medium=widget&utm_campaign=chart&utm_term=BITSTAMP%3ABTCUSD";
+                bitcoinChart.style.position = "absolute";
+                bitcoinChart.style.bottom = "0";
+                bitcoinChart.style.right = "0";
+                bitcoinChart.style.width = "300px";
+                bitcoinChart.style.height = "200px";
+                bitcoinChart.style.border = "none";
+                document.body.appendChild(bitcoinChart);
+            } else if (count === 960) {
+                button.textContent = "you're incredible!";
+                const annoyingAlert = document.createElement("div");
+                annoyingAlert.style.position = "fixed";
+                annoyingAlert.style.padding = "10px 20px";
+                annoyingAlert.style.backgroundColor = "#161b22";
+                annoyingAlert.style.color = "white";
+                annoyingAlert.style.borderRadius = "5px";
+                annoyingAlert.style.boxShadow = "0px 4px 8px rgba(0, 0, 0, 0.3)";
+                annoyingAlert.style.zIndex = "1000";
+                annoyingAlert.textContent = "Annoying Alert: You're incredible!";
+                document.body.appendChild(annoyingAlert);
+
+                function moveAlertRandomly() {
+                    const randomX = Math.floor(Math.random() * (window.innerWidth - annoyingAlert.offsetWidth));
+                    const randomY = Math.floor(Math.random() * (window.innerHeight - annoyingAlert.offsetHeight));
+                    annoyingAlert.style.left = `${randomX}px`;
+                    annoyingAlert.style.top = `${randomY}px`;
+                }
+
+                moveAlertRandomly();
+                setInterval(moveAlertRandomly, 1000);
+            } else if (count === 980) {
+                button.textContent = "you're incredible!";
+                const annoyingAlert = document.createElement("div");
+                annoyingAlert.style.position = "fixed";
+                annoyingAlert.style.padding = "10px 20px";
+                annoyingAlert.style.backgroundColor = "#161b22";
+                annoyingAlert.style.color = "white";
+                annoyingAlert.style.borderRadius = "5px";
+                annoyingAlert.style.boxShadow = "0px 4px 8px rgba(0, 0, 0, 0.3)";
+                annoyingAlert.style.zIndex = "1000";
+                annoyingAlert.textContent = "Annoying Alert: You're incredible!";
+                document.body.appendChild(annoyingAlert);
+
+                function moveAlertRandomly() {
+                    const randomX = Math.floor(Math.random() * (window.innerWidth - annoyingAlert.offsetWidth));
+                    const randomY = Math.floor(Math.random() * (window.innerHeight - annoyingAlert.offsetHeight));
+                    annoyingAlert.style.left = `${randomX}px`;
+                    annoyingAlert.style.top = `${randomY}px`;
+                }
+
+                moveAlertRandomly();
+                setInterval(moveAlertRandomly, 1000);
+            } else if (count === 1000) {
+                button.textContent = "gg?";
+                const discoLights = document.createElement("div");
+                discoLights.style.position = "fixed";
+                discoLights.style.bottom = "0";
+                discoLights.style.width = "100%";
+                discoLights.style.height = "50px";
+                discoLights.style.display = "flex";
+                discoLights.style.justifyContent = "space-around";
+                discoLights.style.zIndex = "-988";
+
+                for (let i = 0; i < 10; i++) {
+                    const light = document.createElement("div");
+                    light.style.width = "10%";
+                    light.style.height = "100%";
+                    light.style.backgroundColor = getRandomColor();
+                    light.style.transition = "background-color 0.5s";
+                    discoLights.appendChild(light);
+                }
+
+                document.body.appendChild(discoLights);
+
+                const discoLightsTop = discoLights.cloneNode(true);
+                discoLightsTop.style.top = "0";
+                discoLightsTop.style.bottom = "auto";
+                document.body.appendChild(discoLightsTop);
+
+                const discoLightsLeft = document.createElement("div");
+                discoLightsLeft.style.position = "fixed";
+                discoLightsLeft.style.left = "0";
+                discoLightsLeft.style.width = "50px";
+                discoLightsLeft.style.height = "100%";
+                discoLightsLeft.style.display = "flex";
+                discoLightsLeft.style.flexDirection = "column";
+                discoLightsLeft.style.justifyContent = "space-around";
+                discoLightsLeft.style.zIndex = "-998";
+
+                for (let i = 0; i < 10; i++) {
+                    const light = document.createElement("div");
+                    light.style.width = "100%";
+                    light.style.height = "10%";
+                    light.style.backgroundColor = getRandomColor();
+                    light.style.transition = "background-color 0.5s";
+                    discoLightsLeft.appendChild(light);
+                }
+
+                document.body.appendChild(discoLightsLeft);
+
+                const discoLightsRight = discoLightsLeft.cloneNode(true);
+                discoLightsRight.style.right = "0";
+                discoLightsRight.style.left = "auto";
+                discoLightsRight.style.zIndex = "-998";
+                document.body.appendChild(discoLightsRight);
+
+                setInterval(() => {
+                    discoLights.childNodes.forEach(light => {
+                        light.style.backgroundColor = getRandomColor();
+                    });
+                    discoLightsTop.childNodes.forEach(light => {
+                        light.style.backgroundColor = getRandomColor();
+                    });
+                    discoLightsLeft.childNodes.forEach(light => {
+                        light.style.backgroundColor = getRandomColor();
+                    });
+                    discoLightsRight.childNodes.forEach(light => {
+                        light.style.backgroundColor = getRandomColor();
+                    });
+                }, 500);
+            } else if (count === 1120) {
+                button.textContent = "heh";
+                const screenEffect = document.createElement("div");
+                screenEffect.style.position = "fixed";
+                screenEffect.style.top = "0";
+                screenEffect.style.left = "0";
+                screenEffect.style.width = "100%";
+                screenEffect.style.height = "100%";
+                screenEffect.style.pointerEvents = "none";
+                screenEffect.style.zIndex = "999";
+                screenEffect.style.transition = "opacity 0.5s";
+                document.body.appendChild(screenEffect);
+
+                function changeScreenEffectColor() {
+                    screenEffect.style.backgroundColor = getRandomColor();
+                    screenEffect.style.opacity = "0.3";
+                    setTimeout(() => {
+                        screenEffect.style.opacity = "0.1";
+                    }, 500);
+                }
+
+                changeScreenEffectColor();
+                setInterval(changeScreenEffectColor, 1000);
+            } else if (count === 1260) {
+                button.textContent = "memes!";
+            const gradientEffect = document.createElement("div");
+            gradientEffect.style.position = "fixed";
+            gradientEffect.style.top = "0";
+            gradientEffect.style.left = "0";
+            gradientEffect.style.width = "100%";
+            gradientEffect.style.height = "100%";
+            gradientEffect.style.pointerEvents = "none";
+            gradientEffect.style.zIndex = "-999";
+            gradientEffect.style.transition = "background 1s ease";
+            document.body.appendChild(gradientEffect);
+
+            function changeGradient() {
+                const color1 = getRandomColor();
+                const color2 = getRandomColor();
+                gradientEffect.style.background = `linear-gradient(45deg, ${color1}, ${color2})`;
+            }
+
+            changeGradient();
+            setInterval(changeGradient, 1000);
+         }}
+        
+        button.addEventListener("click", updateButton);
+    </script>
+</body>
+</html>
